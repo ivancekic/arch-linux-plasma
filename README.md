@@ -6,7 +6,7 @@
 1. Boot Arch Linux from Usb or any media
 2. Update dabase with cmd (# pacman -Syyy)
 3. Install git with cmd (# pacman -S git nano)
-4. Clone project with command (# git clone https://github.com/ivancekic/arch-setup-plasma)
+4. Clone project with command (# git clone https://github.com/ivancekic/arch-linux-plasma)
 5. cd arch-setup
 6. chmod a+x setup.sh
 7. Edit script with nano or vi
@@ -17,9 +17,9 @@
 
 
 ## Preview
-![clean](https://raw.githubusercontent.com/ivancekic/arch-setup-plasma/master/clean.jpg) <br />
+![clean](https://raw.githubusercontent.com/ivancekic/arch-linux-plasma/master/clean.jpg) <br />
 
 
 
-![konsole](https://raw.githubusercontent.com/ivancekic/arch-setup-plasma/master/neo.jpg) <br />
+![konsole](https://raw.githubusercontent.com/ivancekic/arch-linux-plasma/master/neo.jpg) <br />
 
