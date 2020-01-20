@@ -8,6 +8,7 @@ hostname="noname"
 user_name="ivan"
 continent_city="Europe/Belgrade"
 swap_size="4"
+root_size="30"
 
 echo "Updating system clock"
 timedatectl set-ntp true
@@ -30,7 +31,8 @@ vgcreate vg0 /dev/mapper/cryptlvm
 
 echo "Creating logical volumes"
 lvcreate -L +"$swap_size"GB vg0 -n swap
-lvcreate -l +100%FREE vg0 -n root
+lvcreate -L +"$root_size"GB vg0 -n root
+lvcreate -l +100%FREE vg0 -n home
 
 echo "Setting up / partition"
 yes | mkfs.ext4 /dev/vg0/root
@@ -40,6 +42,11 @@ echo "Setting up /boot partition"
 yes | mkfs.fat -F32 /dev/sda1
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
+
+echo "Setting up /home partition"
+yes | mkfs.ext4 /dev/vg0/home 
+mkdir /mnt/home 
+mount /dev/vg0/home /mnt/home 
 
 echo "Setting up swap"
 yes | mkswap /dev/vg0/swap
@@ -229,7 +236,7 @@ EOF
 
 echo "Pipe all output into log file"
 } |& tee -a /root/Arch-Installation.log
-mv /root/Arch-Installation.log /mnt/home/$(ls /mnt/home/)/
+mv /root/Arch-Installation.log /mnt/home/$user_name/
 
 echo "Remove installation settings files"
 rm -R /mnt/arch-setup-plasma/
