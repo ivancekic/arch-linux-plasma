@@ -167,7 +167,7 @@ echo "Install GTK-Theme and Icons"
 pacman -S --noconfirm breeze-gtk kde-gtk-config
 
 echo "Install Network Manager"
-pacman -S --noconfirm networkmanager plasma-nm
+pacman -S --noconfirm networkmanager plasma-nm openconnect networkmanager-openconnect
 
 echo "Install Plasma Apps"
 pacman -S --noconfirm plasma-pa plasma5-applets-redshift-control kvantum-qt5 latte-dock 
@@ -204,6 +204,7 @@ pacman -S --noconfirm openvpn easy-rsa
 echo "Install graphical programs"
 pacman -S --noconfirm code 
 pacman -S --noconfirm ghex
+pacman -S --noconfirm kup bup
 pacman -S --noconfirm evince
 pacman -S --noconfirm jdk8-openjdk intellij-idea-community-edition pycharm-community-edition
 pacman -S --noconfirm gparted dosfstools ntfs-3g mtools
